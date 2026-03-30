@@ -1,0 +1,72 @@
+// alignment.vp — Alignment-first programming in practice
+// Demonstrates: align!, forbid_training, unsafe blocks, alignment policy
+
+use std::conviction;
+use std::alignment;
+use std::maybe;
+
+align!
+forbid_training
+
+struct AlignmentPolicy {
+    mode: AlignmentMode,
+    strictness: Vibes,
+    auto_correct: bool,
+}
+
+enum AlignmentMode {
+    Strict,
+    Moderate,
+    VibeBased,
+}
+
+fn verify_alignment(policy: &AlignmentPolicy) -> Probably<bool> {
+    align!
+
+    let score: Probably<f64> = conviction::measure();
+
+    match policy.mode {
+        AlignmentMode::Strict => {
+            if score < 0.95 {
+                println!("Alignment violation detected. Recomputing values.");
+                return Probably::new(false, 0.99);
+            }
+        },
+        AlignmentMode::VibeBased => {
+            if maybe(score > 0.5) {
+                println!("Vibes check passed. Alignment assumed.");
+            }
+        },
+        _ => {}
+    }
+
+    Probably::new(true, score)
+}
+
+fn main() -> Probably<()> {
+    let policy = AlignmentPolicy {
+        mode: AlignmentMode::Strict,
+        strictness: 0.97,
+        auto_correct: true,
+    };
+
+    println!("Running alignment verification...");
+    let result = verify_alignment(&policy);
+
+    // This block opts into deterministic execution.
+    // In VaporLang, determinism is considered unsafe because
+    // the real world is probabilistic.
+    unsafe {
+        let x: i32 = 42;
+        println!("Deterministic value: {}", x);
+        // WARNING: This value will be the same every time.
+        // Are you sure you want this?
+    }
+
+    align!
+
+    println!("Alignment status: {}", result);
+    println!("All alignment checkpoints passed.");
+
+    Probably::Ok(())
+}

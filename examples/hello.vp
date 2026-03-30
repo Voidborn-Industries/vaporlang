@@ -1,0 +1,23 @@
+// hello.vp — Your first VaporLang program
+// Demonstrates: Probably types, Vibes, basic I/O
+
+use std::conviction;
+use std::maybe;
+
+align!
+
+fn main() -> Probably<()> {
+    let message: Probably<String> = "Hello, world!";
+    let confidence: Vibes = 0.95;
+
+    println!("message: {}", message);
+    println!("confidence level: {}", confidence);
+
+    if maybe(confidence > 0.9) {
+        println!("The vibes are immaculate.");
+    } else {
+        println!("Vibes are off. Consider pivoting.");
+    }
+
+    Probably::Ok(())
+}

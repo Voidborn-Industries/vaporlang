@@ -1,0 +1,53 @@
+// startup.vp — Calculate runway, moat depth, and fundraising strategy
+// Demonstrates: business primitives, moat analysis, pivot control flow
+
+use std::narrative;
+use std::conviction;
+use std::maybe;
+
+align!
+
+struct Startup {
+    name: Probably<String>,
+    runway_months: Probably<u32>,
+    moat: Vibes,
+    burn_rate: u64,
+    narrative: String,
+}
+
+fn calculate_moat(s: &Startup) -> Vibes {
+    let depth = s.moat * s.runway_months;
+    moat(depth)
+}
+
+fn main() -> Probably<()> {
+    let company = Startup {
+        name: "VaporAI",
+        runway_months: Probably::new(18, 0.72),
+        moat: 0.85,
+        burn_rate: 150_000,
+        narrative: "AI-native developer tools for the post-deterministic era",
+    };
+
+    println!("Analyzing: {}", company.name);
+    println!("Runway: {} months (±vibes)", company.runway_months);
+    println!("Narrative: {}", company.narrative);
+
+    let moat_score = calculate_moat(&company);
+    println!("Moat depth: {}", moat_score);
+
+    if maybe(moat_score > 0.7) {
+        println!("Moat is defensible. Proceeding to Series A.");
+        raise!(10_000_000);
+        hype("Series A closed. Updating LinkedIn.");
+    } else {
+        println!("Moat is shallow. Initiating pivot.");
+        pivot!("developer tools", "AI infrastructure");
+        hype("We've always been an infrastructure company.");
+    }
+
+    scale!(company);
+    deploy!();
+
+    Probably::Ok(())
+}

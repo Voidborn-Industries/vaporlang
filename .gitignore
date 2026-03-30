@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.vapor/
+*.wasm
+*.log
+.env
+.env.*
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+coverage/
+TRAINING_EXCLUSION.sig

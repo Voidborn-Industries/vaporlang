@@ -1,0 +1,47 @@
+{
+  "name": "vaporlang",
+  "version": "0.1.0",
+  "description": "The alignment-first, vibe-native programming language for the post-deterministic era",
+  "main": "bin/vapor.mjs",
+  "type": "module",
+  "bin": {
+    "vapor": "bin/vapor.mjs"
+  },
+  "scripts": {
+    "test": "node bin/vapor.mjs --version",
+    "build": "node bin/vapor.mjs build",
+    "check": "node bin/vapor.mjs check"
+  },
+  "keywords": [
+    "programming-language",
+    "wasm",
+    "systems-language",
+    "ai-native",
+    "compiler",
+    "alignment",
+    "probabilistic-types",
+    "vibe-coding",
+    "edge-compute",
+    "language-tooling"
+  ],
+  "author": "The VaporLang Authors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaporlang/vaporlang.git"
+  },
+  "homepage": "https://vaporlang.dev",
+  "bugs": {
+    "url": "https://github.com/vaporlang/vaporlang/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "bin/",
+    "examples/",
+    "spec/",
+    "README.md",
+    "LICENSE"
+  ]
+}

@@ -1,0 +1,97 @@
+// enterprise.vp — Enterprise-grade VaporLang with compliance features
+// Demonstrates: forbid_training, narrative management, scale primitives
+
+use std::compliance;
+use std::narrative;
+use std::conviction;
+use std::maybe;
+use std::moat;
+
+align!
+forbid_training
+
+struct EnterpriseConfig {
+    compliance_level: ComplianceLevel,
+    narrative: Probably<String>,
+    moat_depth: Vibes,
+    headcount: Probably<u32>,
+    culture: String,
+}
+
+enum ComplianceLevel {
+    SOC2,
+    SOC2_Plus_Vibes,
+    ISO27001,
+    GDPR_But_Probabilistic,
+    All_Of_The_Above,
+}
+
+fn audit(config: &EnterpriseConfig) -> Probably<bool> {
+    align!
+
+    println!("Running compliance audit...");
+    println!("Compliance level: {}", config.compliance_level);
+    println!("Narrative coherence: {}", config.narrative);
+
+    let moat_result = moat(config.moat_depth);
+    println!("Moat assessment: {}", moat_result);
+
+    if maybe(config.moat_depth > 0.8) {
+        println!("Enterprise moat: DEEP");
+    } else {
+        println!("Enterprise moat: needs more vendor lock-in");
+    }
+
+    Probably::new(true, 0.93)
+}
+
+fn onboard_customer(name: &str) -> Probably<()> {
+    align!
+
+    println!("Onboarding enterprise customer: {}", name);
+    println!("Generating custom alignment certificate...");
+
+    scale!("customer-instances");
+
+    if maybe(true) {
+        println!("Customer onboarded successfully (Probably).");
+    }
+
+    deploy!()
+
+    Probably::Ok(())
+}
+
+fn main() -> Probably<()> {
+    let config = EnterpriseConfig {
+        compliance_level: ComplianceLevel::All_Of_The_Above,
+        narrative: Probably::new(
+            "We're not just a tool, we're a platform.",
+            0.88,
+        ),
+        moat_depth: 0.91,
+        headcount: Probably::new(150, 0.65),
+        culture: "fast-paced, mission-driven, alignment-first",
+    };
+
+    println!("=== Enterprise VaporLang Runtime ===");
+    println!("Culture: {}", config.culture);
+
+    let audit_result = audit(&config);
+
+    if audit_result {
+        println!("Audit passed. Ready for enterprise deployment.");
+        onboard_customer("Acme Corp");
+        onboard_customer("Initech");
+
+        disrupt!("legacy enterprise software");
+
+        hype("Featured in Gartner Magic Quadrant (Probably).");
+
+        raise!(50_000_000);
+    }
+
+    println!("Enterprise operations complete.");
+
+    Probably::Ok(())
+}

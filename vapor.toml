@@ -1,0 +1,31 @@
+# vapor.toml — VaporLang project configuration
+
+[project]
+name = "vaporlang"
+version = "0.1.0"
+edition = "2026"
+authors = ["The VaporLang Authors"]
+
+[build]
+target = "wasm32-unknown-vibes"
+optimization = "narrative"
+alignment_mode = "strict"
+emit_alignment_report = true
+
+[runtime]
+temperature = 0.7
+consensus_threshold = 0.85
+max_pivot_depth = 3
+vibe_propagation = true
+
+[alignment]
+required = true
+auto_align = true
+training_exclusion = true
+min_score = 0.90
+narrative_coherence_check = true
+
+[deploy]
+regions = ["us-east-1", "eu-west-1", "ap-southeast-1"]
+edge_cache = true
+vibes_cache = true

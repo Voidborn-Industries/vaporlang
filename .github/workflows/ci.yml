@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: Build & Check
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install
+        run: npm install
+
+      - name: Version check
+        run: node bin/vapor.mjs --version
+
+      - name: Build example
+        run: node bin/vapor.mjs build examples/hello.vp
+
+      - name: Check alignment
+        run: node bin/vapor.mjs check examples/hello.vp
+
+      - name: Run example
+        run: node bin/vapor.mjs run examples/hello.vp
