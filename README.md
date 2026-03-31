@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://vaporlang.dev">
+  <a href="https://vaporlang.voidborn.industries">
     <img src=".github/banner.png" alt="VaporLang — The next-gen, alignment-first programming language" width="100%"/>
   </a>
 </p>
@@ -9,11 +9,11 @@
   <a href="https://www.npmjs.com/package/vaporlang"><img src="https://img.shields.io/npm/v/vaporlang?style=flat-square&color=cb3837" alt="npm version"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="License: MIT"/></a>
   <a href="https://discord.gg/vaporlang"><img src="https://img.shields.io/badge/discord-2.4k_members-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord"/></a>
-  <a href="https://vaporlang.dev"><img src="https://img.shields.io/badge/docs-vaporlang.dev-22d3ee?style=flat-square" alt="Documentation"/></a>
+  <a href="https://vaporlang.voidborn.industries"><img src="https://img.shields.io/badge/docs-vaporlang.voidborn.industries-22d3ee?style=flat-square" alt="Documentation"/></a>
 </p>
 
 <p align="center">
-  <a href="https://vaporlang.dev">Website</a> · <a href="https://vaporlang.dev/docs">Docs</a> · <a href="https://discord.gg/vaporlang">Discord</a> · <a href="https://x.com/vaporlang">Twitter/X</a> · <a href="spec/LANGUAGE_SPEC.md">Language Spec</a>
+  <a href="https://vaporlang.voidborn.industries">Website</a> · <a href="https://vaporlang.voidborn.industries/docs">Docs</a> · <a href="https://discord.gg/vaporlang">Discord</a> · <a href="https://x.com/vaporlang">Twitter/X</a> · <a href="spec/LANGUAGE_SPEC.md">Language Spec</a>
 </p>
 
 ---
@@ -219,7 +219,7 @@ VaporLang is built in the open. We believe the best languages are shaped by the 
 - **GitHub Discussions**: [github.com/Voidborn-Industries/vaporlang/discussions](https://github.com/Voidborn-Industries/vaporlang/discussions)
 - **Discord**: [discord.gg/vaporlang](https://discord.gg/vaporlang)
 - **Twitter/X**: [@vaporlang](https://x.com/vaporlang)
-- **Blog**: [vaporlang.dev/blog](https://vaporlang.dev/blog)
+- **Blog**: [vaporlang.voidborn.industries/blog](https://vaporlang.voidborn.industries/blog)
 
 ## Contributing
 

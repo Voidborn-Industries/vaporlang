@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { resolve, basename, extname } from 'node:path';
@@ -590,7 +590,7 @@ async function cmdDeploy() {
   const deployId = Math.random().toString(36).substring(2, 10);
   ok(`deployed successfully`);
   info(`deployment id: ${c.bold}vpr_${deployId}${c.reset}`);
-  info(`dashboard: ${c.cyan}${c.italic}https://vaporlang.dev/deployments/vpr_${deployId}${c.reset}`);
+  info(`dashboard: ${c.cyan}${c.italic}https://vaporlang.voidborn.industries/deployments/vpr_${deployId}${c.reset}`);
   console.log();
 }
 
@@ -679,8 +679,8 @@ ${c.bold}${c.yellow}EXAMPLES:${c.reset}
     vapor deploy
 
 ${c.bold}${c.yellow}LEARN MORE:${c.reset}
-    Documentation:  ${c.cyan}https://vaporlang.dev/docs${c.reset}
-    Spec:           ${c.cyan}https://vaporlang.dev/spec${c.reset}
+    Documentation:  ${c.cyan}https://vaporlang.voidborn.industries/docs${c.reset}
+    Spec:           ${c.cyan}https://vaporlang.voidborn.industries/spec${c.reset}
     Discord:        ${c.cyan}https://discord.gg/vaporlang${c.reset}
     GitHub:         ${c.cyan}https://github.com/Voidborn-Industries/vaporlang${c.reset}
 `);
