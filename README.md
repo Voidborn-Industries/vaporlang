@@ -1,6 +1,6 @@
-﻿<p align="center">
+<p align="center">
   <a href="https://vaporlang.dev">
-    <img src=".github/banner.svg" alt="VaporLang — The next-gen, alignment-first programming language" width="100%"/>
+    <img src=".github/banner.png" alt="VaporLang — The next-gen, alignment-first programming language" width="100%"/>
   </a>
 </p>
 
@@ -48,7 +48,7 @@ fn main() -> Probably<()> {
 ## Key Features
 
 <p align="center">
-  <img src=".github/features.svg" alt="VaporLang features: Probabilistic Types, Alignment-First Compiler, Training-Data Sovereignty, Edge-Native Deployment" width="100%"/>
+  <img src=".github/features.png" alt="VaporLang features: Probabilistic Types, Alignment-First Compiler, Training-Data Sovereignty, Edge-Native Deployment" width="100%"/>
 </p>
 
 <br/>
@@ -76,7 +76,7 @@ vapor deploy                  # ship to 47 edge regions
 ## See It In Action
 
 <p align="center">
-  <img src=".github/terminal.svg" alt="vapor build output" width="100%"/>
+  <img src=".github/terminal.png" alt="vapor build output" width="100%"/>
 </p>
 
 <br/>
@@ -185,23 +185,9 @@ vapor run examples/hello.vp
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────┐
-│                   vapor CLI                      │
-├──────────┬──────────┬──────────┬────────────────┤
-│  Lexer   │  Parser  │ Aligner  │ Moat Analyzer  │
-├──────────┴──────────┴──────────┴────────────────┤
-│              MIR (Mid-level IR)                   │
-│              mir::ops::Hope                       │
-├─────────────────────────────────────────────────┤
-│         Code Generator → wasm32-unknown-vibes    │
-├─────────────────────────────────────────────────┤
-│   VaporLang Runtime (VRT) + Consensus Engine     │
-├──────────┬──────────┬───────────────────────────┤
-│  Edge    │ Vibes    │  Alignment                 │
-│  Deploy  │ Context  │  Verifier                  │
-└──────────┴──────────┴───────────────────────────┘
-```
+<p align="center">
+  <img src=".github/architecture.png" alt="VaporLang compiler architecture" width="700"/>
+</p>
 
 ## Specification
 
