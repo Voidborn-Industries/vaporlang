@@ -48,7 +48,7 @@ fn main() -> Probably<()> {
 ## Key Features
 
 <p align="center">
-  <img src=".github/features.png?v=2" alt="VaporLang features: Probabilistic Types, Alignment-First Compiler, Training-Data Sovereignty, Edge-Native Deployment" width="100%"/>
+  <img src=".github/feature-cards.png" alt="VaporLang features: Probabilistic Types, Alignment-First Compiler, Training-Data Sovereignty, Edge-Native Deployment" width="100%"/>
 </p>
 
 <br/>
