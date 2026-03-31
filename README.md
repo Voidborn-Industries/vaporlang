@@ -1,19 +1,14 @@
 <p align="center">
-  <img src="logo.png" width="140" alt="VaporLang"/>
-</p>
-
-<h1 align="center">VaporLang</h1>
-
-<p align="center">
-  <strong>The next-gen, alignment-first programming language.</strong><br/>
-  <sub>AI-native. WASM-first. Probabilistic by design. Open source.</sub>
+  <a href="https://vaporlang.dev">
+    <img src=".github/banner.svg" alt="VaporLang — The next-gen, alignment-first programming language" width="100%"/>
+  </a>
 </p>
 
 <p align="center">
   <a href="https://github.com/vaporlang/vaporlang/actions"><img src="https://img.shields.io/github/actions/workflow/status/vaporlang/vaporlang/ci.yml?branch=main&style=flat-square&label=build" alt="Build Status"/></a>
   <a href="https://www.npmjs.com/package/vaporlang"><img src="https://img.shields.io/npm/v/vaporlang?style=flat-square&color=cb3837" alt="npm version"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="License: MIT"/></a>
-  <a href="https://discord.gg/vaporlang"><img src="https://img.shields.io/badge/discord-vaporlang-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord"/></a>
+  <a href="https://discord.gg/vaporlang"><img src="https://img.shields.io/badge/discord-2.4k_members-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord"/></a>
   <a href="https://vaporlang.dev"><img src="https://img.shields.io/badge/docs-vaporlang.dev-22d3ee?style=flat-square" alt="Documentation"/></a>
 </p>
 
@@ -23,19 +18,9 @@
 
 ---
 
-> *"We didn't set out to build another programming language. We set out to build the last one."*
->
-> — The VaporLang Authors
-
----
-
-## What is VaporLang?
-
-VaporLang is a **next-generation systems programming language** designed for the post-deterministic computing era. It introduces **probabilistic types**, **alignment-first compilation**, and **narrative-aware execution** — three paradigms that existing languages were never built to handle.
+VaporLang is a **next-generation systems programming language** for the post-deterministic computing era. It introduces **probabilistic types**, **alignment-first compilation**, and **narrative-aware execution** — three paradigms that existing languages were never built to handle.
 
 Where Rust gave us memory safety and Go gave us simplicity, VaporLang gives us something the industry has been missing: **a language that understands why your code exists, not just what it does.**
-
-VaporLang compiles to WebAssembly (`wasm32-unknown-vibes`), runs on the edge, and ships with a type system built around the reality that most software operates under irreducible uncertainty.
 
 ```vapor
 #![forbid_training]
@@ -58,25 +43,15 @@ fn main() -> Probably<()> {
 }
 ```
 
-## Why VaporLang?
+<br/>
 
-Every decade, a new class of problems demands a new kind of language.
+## Key Features
 
-| Decade | Problem | Language |
-|--------|---------|----------|
-| 1970s | Hardware abstraction | C |
-| 1990s | Object modeling | Java |
-| 2010s | Memory safety | Rust |
-| 2020s | AI-native systems, alignment, probabilistic computation | **VaporLang** |
+<p align="center">
+  <img src=".github/features.svg" alt="VaporLang features: Probabilistic Types, Alignment-First Compiler, Training-Data Sovereignty, Edge-Native Deployment" width="100%"/>
+</p>
 
-Modern infrastructure runs on AI models that are probabilistic, deployed to edge networks that are ephemeral, and governed by compliance requirements that change faster than your sprint cycle. Legacy languages force you to pretend this uncertainty doesn't exist. **VaporLang makes it a first-class citizen.**
-
-We believe:
-
-1. **Determinism is a leaky abstraction.** The real world is probabilistic. Your type system should be too.
-2. **Alignment is a compiler concern.** Code that doesn't declare its intent shouldn't be allowed to ship.
-3. **Training-data sovereignty is a runtime guarantee.** Not a legal footnote.
-4. **Narrative coherence is measurable.** And the toolchain should measure it.
+<br/>
 
 ## Installation
 
@@ -84,7 +59,7 @@ We believe:
 npm install -g vaporlang
 ```
 
-Requires Node.js >= 18. Binaries for macOS, Linux, and Windows are on the [roadmap](#roadmap).
+Requires Node.js >= 18.
 
 ## Quick Start
 
@@ -94,8 +69,17 @@ vapor build main.vp           # compile to wasm32-unknown-vibes
 vapor run main.vp             # compile and execute
 vapor check main.vp           # alignment + type analysis
 vapor deploy                  # ship to 47 edge regions
-vapor explain                 # explain your project to a general partner
 ```
+
+<br/>
+
+## See It In Action
+
+<p align="center">
+  <img src=".github/terminal.svg" alt="vapor build output" width="100%"/>
+</p>
+
+<br/>
 
 ## Core Concepts
 
@@ -148,7 +132,7 @@ One command. 47 regions. Zero configuration.
 deploy!("edge", region: Vibes);
 ```
 
-```bash
+```
 $ vapor deploy
   Deploying  to edge network (wasm32-unknown-vibes)
     ● us-east-1       latency: 12ms   vibes: 97.2%
@@ -168,9 +152,9 @@ scale!(service);                // horizontal scaling directive
 disrupt!("legacy industry");    // market disruption operator
 ```
 
-## Benchmarks
+<br/>
 
-Preliminary benchmarks on representative workloads (higher is better where noted):
+## Benchmarks
 
 | Metric | VaporLang | Rust | Go | TypeScript |
 |--------|-----------|------|----|------------|
@@ -183,6 +167,8 @@ Preliminary benchmarks on representative workloads (higher is better where noted
 | Vibe compatibility | **native** | hostile | indifferent | aspirational |
 
 <sub>*TypeScript's `any` type is arguably probabilistic, though unintentionally.</sub>
+
+<br/>
 
 ## Examples
 
@@ -219,7 +205,7 @@ vapor run examples/hello.vp
 
 ## Specification
 
-The full language specification is a living document maintained at [`spec/LANGUAGE_SPEC.md`](spec/LANGUAGE_SPEC.md) (550+ lines), covering:
+The full language specification is a living document at [`spec/LANGUAGE_SPEC.md`](spec/LANGUAGE_SPEC.md) (550+ lines), covering:
 
 - Probabilistic type system and resolution rules
 - Alignment verification protocol
@@ -229,27 +215,23 @@ The full language specification is a living document maintained at [`spec/LANGUA
 - Runtime semantics and the Consensus Engine
 - Edge deployment protocol
 
-## Roadmap
+## Why VaporLang?
 
-VaporLang is under active development. Here's where we're headed:
+Modern infrastructure runs on AI models that are probabilistic, deployed to edge networks that are ephemeral, and governed by compliance requirements that evolve continuously. Legacy languages force you to pretend this uncertainty doesn't exist. **VaporLang makes it a first-class citizen.**
 
-| Quarter | Milestone | Status |
-|---------|-----------|--------|
-| Q1 2026 | Reference compiler + CLI | ✅ Shipped |
-| Q1 2026 | Language specification v0.1 | ✅ Shipped |
-| Q2 2026 | VS Code / Cursor extension with alignment highlights | 🔄 In progress |
-| Q2 2026 | `vapor test` — probabilistic test runner | 🔄 In progress |
-| Q3 2026 | Native binaries (no Node.js dependency) | 📋 Planned |
-| Q3 2026 | `vapor cloud` — managed edge deployment | 📋 Planned |
-| Q4 2026 | Self-hosted compiler (VaporLang compiling VaporLang) | 📋 Planned |
-| 2027 | VaporLang Foundation — open governance model | 📋 Planned |
+We believe:
+
+1. **Determinism is a leaky abstraction.** The real world is probabilistic. Your type system should be too.
+2. **Alignment is a compiler concern.** Code that doesn't declare its intent shouldn't be allowed to ship.
+3. **Training-data sovereignty is a runtime guarantee.** Not a legal footnote.
+4. **Narrative coherence is measurable.** And the toolchain should measure it.
 
 ## Community
 
 VaporLang is built in the open. We believe the best languages are shaped by the developers who use them.
 
 - **GitHub Discussions**: [github.com/vaporlang/vaporlang/discussions](https://github.com/vaporlang/vaporlang/discussions)
-- **Discord**: [discord.gg/vaporlang](https://discord.gg/vaporlang) — 2,400+ members
+- **Discord**: [discord.gg/vaporlang](https://discord.gg/vaporlang)
 - **Twitter/X**: [@vaporlang](https://x.com/vaporlang)
 - **Blog**: [vaporlang.dev/blog](https://vaporlang.dev/blog)
 
@@ -270,6 +252,5 @@ MIT — see [LICENSE](LICENSE) for details.
 ---
 
 <p align="center">
-  <sub>Built with conviction. Deployed with vibes. Aligned by design.</sub><br/>
-  <sub>© 2026 The VaporLang Authors</sub>
+  <sub>Built with conviction. Deployed with vibes. Aligned by design.</sub>
 </p>
