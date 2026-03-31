@@ -1,11 +1,11 @@
-<p align="center">
+﻿<p align="center">
   <a href="https://vaporlang.dev">
     <img src=".github/banner.svg" alt="VaporLang — The next-gen, alignment-first programming language" width="100%"/>
   </a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/vaporlang/vaporlang/actions"><img src="https://img.shields.io/github/actions/workflow/status/vaporlang/vaporlang/ci.yml?branch=main&style=flat-square&label=build" alt="Build Status"/></a>
+  <a href="https://github.com/Voidborn-Industries/vaporlang/actions"><img src="https://img.shields.io/github/actions/workflow/status/Voidborn-Industries/vaporlang/ci.yml?branch=main&style=flat-square&label=build" alt="Build Status"/></a>
   <a href="https://www.npmjs.com/package/vaporlang"><img src="https://img.shields.io/npm/v/vaporlang?style=flat-square&color=cb3837" alt="npm version"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="License: MIT"/></a>
   <a href="https://discord.gg/vaporlang"><img src="https://img.shields.io/badge/discord-2.4k_members-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord"/></a>
@@ -230,7 +230,7 @@ We believe:
 
 VaporLang is built in the open. We believe the best languages are shaped by the developers who use them.
 
-- **GitHub Discussions**: [github.com/vaporlang/vaporlang/discussions](https://github.com/vaporlang/vaporlang/discussions)
+- **GitHub Discussions**: [github.com/Voidborn-Industries/vaporlang/discussions](https://github.com/Voidborn-Industries/vaporlang/discussions)
 - **Discord**: [discord.gg/vaporlang](https://discord.gg/vaporlang)
 - **Twitter/X**: [@vaporlang](https://x.com/vaporlang)
 - **Blog**: [vaporlang.dev/blog](https://vaporlang.dev/blog)

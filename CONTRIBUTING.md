@@ -1,4 +1,4 @@
-# Contributing to VaporLang
+﻿# Contributing to VaporLang
 
 Thank you for your interest in contributing to VaporLang! We welcome contributions from developers, researchers, and alignment enthusiasts of all experience levels.
 
@@ -44,7 +44,7 @@ By participating in this project, you agree to uphold the VaporLang Code of Cond
 ### Getting Started
 
 ```bash
-git clone https://github.com/vaporlang/vaporlang.git
+git clone https://github.com/Voidborn-Industries/vaporlang.git
 cd vaporlang   # or your clone directory name
 npm install
 npm test

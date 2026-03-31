@@ -28,11 +28,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vaporlang/vaporlang.git"
+    "url": "git+https://github.com/Voidborn-Industries/vaporlang.git"
   },
   "homepage": "https://vaporlang.dev",
   "bugs": {
-    "url": "https://github.com/vaporlang/vaporlang/issues"
+    "url": "https://github.com/Voidborn-Industries/vaporlang/issues"
   },
   "engines": {
     "node": ">=18.0.0"

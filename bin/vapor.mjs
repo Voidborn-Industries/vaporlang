@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { resolve, basename, extname } from 'node:path';
@@ -682,7 +682,7 @@ ${c.bold}${c.yellow}LEARN MORE:${c.reset}
     Documentation:  ${c.cyan}https://vaporlang.dev/docs${c.reset}
     Spec:           ${c.cyan}https://vaporlang.dev/spec${c.reset}
     Discord:        ${c.cyan}https://discord.gg/vaporlang${c.reset}
-    GitHub:         ${c.cyan}https://github.com/vaporlang/vaporlang${c.reset}
+    GitHub:         ${c.cyan}https://github.com/Voidborn-Industries/vaporlang${c.reset}
 `);
 }
 
