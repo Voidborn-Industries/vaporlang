@@ -5,7 +5,7 @@
   "main": "bin/vapor.mjs",
   "type": "module",
   "bin": {
-    "vapor": "bin/vapor.mjs"
+    "vapor": "./bin/vapor.mjs"
   },
   "scripts": {
     "test": "node bin/vapor.mjs --version",
@@ -41,7 +41,11 @@
     "bin/",
     "examples/",
     "spec/",
+    "logo.png",
+    "logo.svg",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "CONTRIBUTING.md",
+    "ALIGNMENT.md"
   ]
 }

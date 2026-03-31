@@ -57,7 +57,7 @@ fn onboard_customer(name: &str) -> Probably<()> {
         println!("Customer onboarded successfully (Probably).");
     }
 
-    deploy!()
+    deploy!();
 
     Probably::Ok(())
 }

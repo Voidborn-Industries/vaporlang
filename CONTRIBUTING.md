@@ -45,7 +45,7 @@ By participating in this project, you agree to uphold the VaporLang Code of Cond
 
 ```bash
 git clone https://github.com/vaporlang/vaporlang.git
-cd vaporlang
+cd vaporlang   # or your clone directory name
 npm install
 npm test
 ```

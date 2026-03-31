@@ -188,20 +188,23 @@ When the compiler encounters `align!`, it:
 
 ### 4.2 Alignment Modes
 
-Configured in `vapor.toml`:
+Configured in `vapor.toml` (see the repository root `vapor.toml` for a full example):
 
 ```toml
+[build]
+alignment_mode = "strict"   # strict | moderate | vibes
+
 [alignment]
 required = true
 auto_align = true
-mode = "strict"  # strict | moderate | vibes
+min_score = 0.90
 ```
 
-| Mode | Threshold | Behavior |
-|------|-----------|----------|
-| `strict` | 0.95 | Compilation fails if alignment score is below threshold |
-| `moderate` | 0.75 | Warning emitted, compilation proceeds |
-| `vibes` | 0.50 | Alignment checked but only logged; never blocks |
+| `alignment_mode` | Typical `min_score` | Behavior |
+|------------------|---------------------|----------|
+| `strict` | ≥ 0.90 | Compilation fails if alignment score is below threshold |
+| `moderate` | ~ 0.75 | Warning emitted, compilation proceeds |
+| `vibes` | ~ 0.50 | Alignment checked but only logged; never blocks |
 
 ### 4.3 `forbid_training`
 
@@ -524,7 +527,7 @@ All async operations automatically insert alignment checkpoints at suspension po
 | T042 | Type | Probably\<T\> confidence below threshold |
 | D007 | Danger | Unsafe block enables determinism |
 | B001 | Business | Moat depth insufficient |
-| B002 | Business | Narrative incoherent across modules |
+| B002 | Business | Moat analysis complete (strength report) |
 | V001 | Vibes | Vibes entropy exceeds tolerance |
 | V002 | Vibes | VibeContext corruption detected |
 | N001 | Narrative | Narrative pivot limit exceeded |

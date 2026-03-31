@@ -1,3 +1,5 @@
+<p align="center"><img src="logo.png" width="120" alt="VaporLang"/></p>
+
 # VaporLang
 
 **The alignment-first, vibe-native programming language for the post-deterministic era.**
