@@ -82,45 +82,85 @@ def render_banner():
     print("banner.png done")
 
 
+def draw_icon_prob(draw, x, y, color):
+    """Angle-bracket <T> icon drawn as lines"""
+    draw.line([(x + 4, y), (x, y + 10), (x + 4, y + 20)], fill=color, width=2)
+    draw.text((x + 8, y + 2), "T", fill=color, font=get_sans(14, bold=True))
+    draw.line([(x + 22, y), (x + 26, y + 10), (x + 22, y + 20)], fill=color, width=2)
+
+def draw_icon_align(draw, x, y, color):
+    """Crosshair / target icon"""
+    cx, cy = x + 12, y + 10
+    r = 10
+    draw.ellipse([cx - r, cy - r, cx + r, cy + r], outline=color, width=2)
+    draw.ellipse([cx - 4, cy - 4, cx + 4, cy + 4], fill=color)
+    draw.line([(cx, cy - r - 3), (cx, cy + r + 3)], fill=color, width=1)
+    draw.line([(cx - r - 3, cy), (cx + r + 3, cy)], fill=color, width=1)
+
+def draw_icon_shield(draw, x, y, color):
+    """Shield icon"""
+    pts = [
+        (x + 12, y), (x + 24, y + 5), (x + 24, y + 14),
+        (x + 12, y + 22), (x, y + 14), (x, y + 5),
+    ]
+    draw.polygon(pts, outline=color, width=2)
+    draw.line([(x + 8, y + 11), (x + 11, y + 14), (x + 17, y + 8)], fill=color, width=2)
+
+def draw_icon_deploy(draw, x, y, color):
+    """Hexagon icon"""
+    cx, cy = x + 12, y + 11
+    r = 11
+    import math
+    pts = [(cx + int(r * math.cos(math.radians(a))), cy + int(r * math.sin(math.radians(a)))) for a in range(0, 360, 60)]
+    draw.polygon(pts, outline=color, width=2)
+    draw.line([(cx, cy - 5), (cx, cy + 3)], fill=color, width=2)
+    draw.polygon([(cx - 3, cy + 1), (cx + 3, cy + 1), (cx, cy + 5)], fill=color)
+
 def render_features():
-    W, H = 820, 200
+    pad = 16
+    card_w = 210
+    card_h = 230
+    gap = 14
+    W = pad * 2 + card_w * 4 + gap * 3
+    H = pad * 2 + card_h
     img = Image.new("RGB", (W, H), "#0a0a0f")
     draw = ImageDraw.Draw(img)
 
     cards = [
-        {"icon": "⟨T⟩", "title1": "Probabilistic", "title2": "Types",
+        {"draw_icon": draw_icon_prob, "title1": "Probabilistic", "title2": "Types",
          "d1": "Probably<T>, Maybe<T>,", "d2": "and Vibes — confidence", "d3": "as a first-class value",
          "code": "std::maybe::Probably", "color": (34, 211, 238), "bg": (15, 35, 45)},
-        {"icon": "⊕", "title1": "Alignment-First", "title2": "Compiler",
+        {"draw_icon": draw_icon_align, "title1": "Alignment-First", "title2": "Compiler",
          "d1": "Modules must pass", "d2": "alignment verification", "d3": "before code generation",
          "code": "align! + ALIGNMENT.md", "color": (167, 139, 250), "bg": (25, 15, 45)},
-        {"icon": "⊘", "title1": "Training-Data", "title2": "Sovereignty",
+        {"draw_icon": draw_icon_shield, "title1": "Training-Data", "title2": "Sovereignty",
          "d1": "forbid_training compiles", "d2": "opt-out metadata into", "d3": "your WASM binary",
          "code": "#![forbid_training]", "color": (244, 114, 182), "bg": (40, 15, 30)},
-        {"icon": "⬡", "title1": "Edge-Native", "title2": "Deployment",
+        {"draw_icon": draw_icon_deploy, "title1": "Edge-Native", "title2": "Deployment",
          "d1": "One command deploys", "d2": "to 47 edge regions", "d3": "with zero config",
          "code": "vapor deploy", "color": (74, 222, 128), "bg": (15, 35, 15)},
     ]
 
-    card_w = 195
-    gap = 10
     title_font = get_sans(14, bold=True)
     desc_font = get_sans(11)
     code_font = get_font(10)
-    icon_font = get_sans(24)
 
     for i, c in enumerate(cards):
-        x = i * (card_w + gap)
-        cw = card_w if i < 3 else W - x
-        draw.rounded_rectangle([x, 0, x + cw, H - 5], radius=12, fill=c["bg"], outline=(*c["color"][:3],), width=1)
+        x = pad + i * (card_w + gap)
+        draw.rounded_rectangle([x, pad, x + card_w, pad + card_h], radius=12,
+                               fill=c["bg"], outline=(*c["color"][:3],), width=1)
 
-        draw.text((x + 20, 30), c["icon"], fill=c["color"], font=icon_font)
-        draw.text((x + 20, 62), c["title1"], fill=(228, 228, 231), font=title_font)
-        draw.text((x + 20, 80), c["title2"], fill=(228, 228, 231), font=title_font)
-        draw.text((x + 20, 110), c["d1"], fill=(161, 161, 170), font=desc_font)
-        draw.text((x + 20, 126), c["d2"], fill=(161, 161, 170), font=desc_font)
-        draw.text((x + 20, 142), c["d3"], fill=(161, 161, 170), font=desc_font)
-        draw.text((x + 20, 172), c["code"], fill=c["color"], font=code_font)
+        ix = x + 24
+        iy = pad + 24
+        c["draw_icon"](draw, ix, iy, c["color"])
+
+        tx = x + 24
+        draw.text((tx, pad + 58), c["title1"], fill=(228, 228, 231), font=title_font)
+        draw.text((tx, pad + 76), c["title2"], fill=(228, 228, 231), font=title_font)
+        draw.text((tx, pad + 108), c["d1"], fill=(161, 161, 170), font=desc_font)
+        draw.text((tx, pad + 124), c["d2"], fill=(161, 161, 170), font=desc_font)
+        draw.text((tx, pad + 140), c["d3"], fill=(161, 161, 170), font=desc_font)
+        draw.text((tx, pad + 176), c["code"], fill=c["color"], font=code_font)
 
     img.save(os.path.join(OUT, "features.png"), "PNG")
     print("features.png done")
@@ -195,23 +235,27 @@ def render_terminal():
 
 
 def render_architecture():
-    W, H = 700, 380
+    W = 700
+    pad = 40
+    bw = W - 2 * pad
+    rh = 50
+    arrow_gap = 20
+    num_rows = 6
+    num_arrows = 5
+    H = pad * 2 + num_rows * rh + num_arrows * arrow_gap
+
     img = Image.new("RGB", (W, H), "#0a0a0f")
     draw = ImageDraw.Draw(img)
 
     font = get_sans(13, bold=True)
     font_sm = get_sans(11)
-    border = (50, 50, 70)
+    border = (60, 60, 80)
     accent = (34, 211, 238)
     purple = (167, 139, 250)
     green = (74, 222, 128)
     pink = (244, 114, 182)
     text_c = (228, 228, 231)
     muted = (161, 161, 170)
-
-    pad = 30
-    bw = W - 2 * pad
-    rh = 50
 
     def draw_box(y, label, color, sublabel=None):
         draw.rounded_rectangle([pad, y, pad + bw, y + rh], radius=8, outline=color, width=1, fill=(color[0]//10, color[1]//10, color[2]//10))
@@ -221,10 +265,11 @@ def render_architecture():
 
     def draw_multi(y, items, color):
         n = len(items)
-        iw = bw // n
+        item_gap = 6
+        iw = (bw - (n - 1) * item_gap) // n
         for i, (lab, sub) in enumerate(items):
-            x1 = pad + i * iw
-            x2 = x1 + iw - 4
+            x1 = pad + i * (iw + item_gap)
+            x2 = x1 + iw
             draw.rounded_rectangle([x1, y, x2, y + rh], radius=8, outline=color, width=1, fill=(color[0]//10, color[1]//10, color[2]//10))
             draw.text(((x1 + x2) // 2, y + (rh // 2 if not sub else rh // 2 - 8)), lab, fill=text_c, font=font, anchor="mm")
             if sub:
@@ -232,34 +277,29 @@ def render_architecture():
 
     def draw_arrow(y1, y2):
         cx = W // 2
-        draw.line([(cx, y1), (cx, y2)], fill=border, width=1)
-        draw.polygon([(cx - 4, y2 - 6), (cx + 4, y2 - 6), (cx, y2)], fill=border)
+        draw.line([(cx, y1), (cx, y2)], fill=border, width=2)
+        draw.polygon([(cx - 5, y2 - 7), (cx + 5, y2 - 7), (cx, y2)], fill=border)
 
-    y = 15
+    y = pad
     draw_box(y, "vapor CLI", accent)
-
-    draw_arrow(y + rh, y + rh + 15)
-    y += rh + 15
+    draw_arrow(y + rh, y + rh + arrow_gap)
+    y += rh + arrow_gap
 
     draw_multi(y, [("Lexer", None), ("Parser", None), ("Aligner", None), ("Moat Analyzer", None)], purple)
-
-    draw_arrow(y + rh, y + rh + 15)
-    y += rh + 15
+    draw_arrow(y + rh, y + rh + arrow_gap)
+    y += rh + arrow_gap
 
     draw_box(y, "MIR (Mid-level IR)", pink, "mir::ops::Hope")
+    draw_arrow(y + rh, y + rh + arrow_gap)
+    y += rh + arrow_gap
 
-    draw_arrow(y + rh, y + rh + 15)
-    y += rh + 15
-
-    draw_box(y, "Code Generator", green, "→ wasm32-unknown-vibes")
-
-    draw_arrow(y + rh, y + rh + 15)
-    y += rh + 15
+    draw_box(y, "Code Generator", green, "wasm32-unknown-vibes")
+    draw_arrow(y + rh, y + rh + arrow_gap)
+    y += rh + arrow_gap
 
     draw_box(y, "VaporLang Runtime (VRT)", accent, "Consensus Engine")
-
-    draw_arrow(y + rh, y + rh + 15)
-    y += rh + 15
+    draw_arrow(y + rh, y + rh + arrow_gap)
+    y += rh + arrow_gap
 
     draw_multi(y, [("Edge Deploy", None), ("Vibes Context", None), ("Alignment Verifier", None)], purple)
 
