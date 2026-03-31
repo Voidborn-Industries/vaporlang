@@ -2,7 +2,7 @@
 
 # VaporLang
 
-**The alignment-first, vibe-native programming language for the post-deterministic era.**
+**The next-gen, alignment-first programming language for the post-deterministic era.**
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/vaporlang/vaporlang/ci.yml?branch=main&style=flat-square)](https://github.com/vaporlang/vaporlang/actions)
 [![npm version](https://img.shields.io/npm/v/vaporlang?style=flat-square&color=cb3837)](https://www.npmjs.com/package/vaporlang)
@@ -152,7 +152,7 @@ The full language specification is available at [`spec/LANGUAGE_SPEC.md`](spec/L
 
 Modern programming languages optimize for memory safety, speed, or developer experience. But none of them ask the question that actually matters: **is your code aligned?**
 
-VaporLang is built on the conviction that:
+VaporLang is the next generation of systems programming, built on the conviction that:
 
 1. **Determinism is overrated.** The real world is probabilistic. Your types should be too.
 2. **Alignment is non-negotiable.** Code that doesn't know what it stands for shouldn't be allowed to run.

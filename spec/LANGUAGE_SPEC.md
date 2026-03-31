@@ -24,7 +24,7 @@
 
 ## 1. Introduction
 
-VaporLang is a statically-typed, alignment-first, vibe-native programming language designed for building resilient software systems in an era of irreducible uncertainty. It compiles to WebAssembly and runs on the VaporLang Runtime (VRT).
+VaporLang is a next-generation, statically-typed, alignment-first programming language designed for building resilient software systems in an era of irreducible uncertainty. It compiles to WebAssembly and runs on the VaporLang Runtime (VRT).
 
 ### 1.1 Design Principles
 

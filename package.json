@@ -1,7 +1,7 @@
 {
   "name": "vaporlang",
   "version": "0.1.0",
-  "description": "The alignment-first, vibe-native programming language for the post-deterministic era",
+  "description": "The next-gen, alignment-first programming language for the post-deterministic era",
   "main": "bin/vapor.mjs",
   "type": "module",
   "bin": {

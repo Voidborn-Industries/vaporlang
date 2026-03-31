@@ -645,7 +645,7 @@ function showVersion() {
 function showHelp() {
   console.log(`
 ${c.bold}${c.magenta}VaporLang${c.reset} ${c.dim}${VERSION}${c.reset}
-The alignment-first, vibe-native programming language
+The next-gen, alignment-first programming language
 
 ${c.bold}${c.yellow}USAGE:${c.reset}
     vapor [OPTIONS] [COMMAND]
