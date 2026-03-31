@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://vaporlang.voidborn.industries">
-    <img src=".github/banner.png" alt="VaporLang — The next-gen, alignment-first programming language" width="100%"/>
+    <img src=".github/banner.png?v=2" alt="VaporLang — The next-gen, alignment-first programming language" width="100%"/>
   </a>
 </p>
 
@@ -48,7 +48,7 @@ fn main() -> Probably<()> {
 ## Key Features
 
 <p align="center">
-  <img src=".github/features.png" alt="VaporLang features: Probabilistic Types, Alignment-First Compiler, Training-Data Sovereignty, Edge-Native Deployment" width="100%"/>
+  <img src=".github/features.png?v=2" alt="VaporLang features: Probabilistic Types, Alignment-First Compiler, Training-Data Sovereignty, Edge-Native Deployment" width="100%"/>
 </p>
 
 <br/>
@@ -76,7 +76,7 @@ vapor deploy                  # ship to 47 edge regions
 ## See It In Action
 
 <p align="center">
-  <img src=".github/terminal.png" alt="vapor build output" width="100%"/>
+  <img src=".github/terminal.png?v=2" alt="vapor build output" width="100%"/>
 </p>
 
 <br/>
@@ -186,7 +186,7 @@ vapor run examples/hello.vp
 ## Architecture
 
 <p align="center">
-  <img src=".github/architecture.png" alt="VaporLang compiler architecture" width="700"/>
+  <img src=".github/architecture.png?v=2" alt="VaporLang compiler architecture" width="700"/>
 </p>
 
 ## Specification
